@@ -5,25 +5,22 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+
   <tbody>
-<tr>
+		<tr>
 
-	<% @todos.each do |todo| %> 
-	<tr>
+				<% @todos.each do |todo| %> 
+		<tr>
 
-	<td><h4><%= link_to todo.task,todo %>
-		<td><%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_todo_path(todo) %></td>
+			<td><h4><%= link_to todo.task,todo %></h4></td>
+			<td><h4><%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_todo_path(todo) %></h4></td>
 
-		<td><%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'
-		.html_safe,todo_path(todo),method: :delete,
-                  data: { confirm: "Are you sure?" } %></td>
-     
-		</h4>
-
-	<% end %><br>
-	</tr>
-
-</tbody>
+			<td><h4><%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'
+					.html_safe,todo_path(todo),method: :delete,
+                 data: { confirm: "Are you sure?" } %></td></h4>
+					<% end %><br>
+		</tr>
+	</tbody>
 </table><br>
 
     <div class="form">

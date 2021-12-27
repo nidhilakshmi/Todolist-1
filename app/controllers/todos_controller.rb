@@ -31,8 +31,7 @@ class TodosController < ApplicationController
     end
 
   	def update
-    	@todo = Todo.find(params[:id])
-
+    	
     	if @todo.update(todo_params)
       	redirect_to todos_path, notice: "Task was successfully updated"
 
