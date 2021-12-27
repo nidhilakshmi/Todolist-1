@@ -3,7 +3,7 @@ class TodosController < ApplicationController
 	 before_action :authenticate_user!
 
 	def index
-		@todos =Todo.all
+		@todos = Todo.all
 	end
 
 	def show
@@ -44,7 +44,7 @@ class TodosController < ApplicationController
 
 	def destroy
     	@todo.destroy
-    	redirect_to todos_path
+    	redirect_to todos_path,notice: "Task was successfully deleted"
   	end
 
 	private
