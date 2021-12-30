@@ -21,7 +21,7 @@ class TodosController < ApplicationController
           redirect_to todos_path, notice: "Task was successfully created"
 
         else
-          render :new 
+          render :new,notice: "just check something is wrong" 
 
  	    end
 	end
@@ -54,7 +54,7 @@ class TodosController < ApplicationController
 
   	def todo_params
 
-      	params.require(:todo).permit(:task, :description, :date)
+      	params.require(:todo).permit(:task, :description, :date, :user_id)
 
   	end
 end

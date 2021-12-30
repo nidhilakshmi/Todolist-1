@@ -15,9 +15,11 @@
   </head>
   <body>
 
+      <p id="notice"><%= notice %></p>
+
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand text-centre title" href="#"><h1 class= "link"><%= link_to 'Todolist',todos_path%></h1>
+    <a class="navbar-brand text-centre title" href="#"><h1><%= link_to 'Todolist',todos_path, class: 'link' %></h1>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button><br>

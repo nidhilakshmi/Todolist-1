@@ -1,9 +1,11 @@
-<div class="jumbotron jumbotron-fluid form-1 body">
-  <div class="container">
-    <h2 class="display-5 text-color "><%= @todo.task %></h2>
-    <p class="lead"><%= @todo.description %></p>
-    <p class="lead"><%= @todo.date %></p>
-    <p class="lead"><%= link_to "Edit", edit_todo_path(@todo),class:"btn btn-secondary"%></p>
-    <p class="lead"><%= link_to 'Back', todos_path,class:"btn btn-dark"%></p>
-</div>
+<div class="p-5 mb-4 bg-light rounded-3 form-1">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold"><%= @todo.task %></h1>
+        <p class="col-md-8 fs-4"><%= @todo.description %></p>
+        <p class="col-md-8 fs-4"><%= @todo.date %></p>
+        <p class="col-md-8 fs-4"><%= link_to "Edit", edit_todo_path(@todo),class:"btn btn-secondary"%>
+        </p>
+         <p class="col-md-8 fs-4"><%= link_to 'Back', todos_path,class:"btn btn-dark"%>
+        </p>
+      </div>
 </div>
