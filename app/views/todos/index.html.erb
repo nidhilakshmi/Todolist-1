@@ -8,22 +8,20 @@
 
   <tbody>
 		<tr>
-
-				<% @todos.each do |todo| %> 
-		<tr>
-
+				<% @todos.each do |todo| %>
+				<% if todo.user == current_user %>
 			<td><h4><%= link_to todo.task,todo, class: 'link' %></h4></td>
 			<td><h4><%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_todo_path(todo) %></h4></td>
 
 			<td><h4><%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'
 					.html_safe,todo_path(todo),method: :delete,
                  data: { confirm: "Are you sure?" } %></td></h4>
-					<% end %><br>
+					<% end %>
 		</tr>
+		<% end %>
 	</tbody>
 </table><br>
 
     <div class="form">
-		<button class="btn btn-outline-primary" type="submit">
-			<%= link_to 'Add task +',new_todo_path,class:'navbar-link'%></button>
+			<%= link_to 'Add task +',new_todo_path,class:"btn btn-secondary"%></button>
 		</div>
