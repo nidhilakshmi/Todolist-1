@@ -3,12 +3,11 @@
         <h1 class="display-5 fw-bold"><%= @todo.task %></h1>
         <p class="col-md-8 fs-4"><%= @todo.description %></p>
         <p class="col-md-8 fs-4"><%= @todo.date %></p>
-        <p class="col-md-8 fs-4">user_id:<%= @todo.user_id %></p>
-
+        
         <% if @todo.user == current_user %>
         <p class="col-md-8 fs-4"><%= link_to "Edit", edit_todo_path(@todo),class:"btn btn-secondary"%>
         </p>
-         <p class="col-md-8 fs-4"><%= link_to 'Back', todos_path,class:"btn btn-dark"%>
+        <p class="col-md-8 fs-4"><%= link_to 'Back', todos_path,class:"btn btn-dark"%>
         </p>
         <% end %>
       </div>

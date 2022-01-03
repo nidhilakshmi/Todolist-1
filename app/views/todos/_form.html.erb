@@ -1,9 +1,9 @@
-<%= form_with model: @todo do |form| %>
+  <%= form_with model: @todo do |form| %>
 
   <div class="field form-group form">
     <%= form.text_field :task,class:"form-control",placeholder: "Task"%>
     <% @todo.errors.full_messages_for(:task).each do |message| %>
-      <div><%= message %></div>
+  <div><%= message %></div>
     <% end %><br>
 
   </div>
@@ -11,23 +11,15 @@
   <div class="field form-group form">
     <%= form.text_area :description,class:"form-control",placeholder: "Description"%>
     <% @todo.errors.full_messages_for(:description).each do |message| %>
-      <div><%= message %></div>
+    <div><%= message %></div>
     <% end %><br>
   </div>
 
-   <div class="field form-group form">
+  <div class="field form-group form">
     <%= form.date_field :date,class:"form-control",placeholder: "Date" %>
   </div>
+  
   <br>
-
-  <div class="field form-group form">
-    <%= form.number_field :user_id,id: :todos_user_id,class:"form-control",value: current_user.id,type: :hidden%>
-  </div>
-  <br>
-
-
-
-
   <div class="form" >
     <%= form.submit class:"btn btn-secondary" %>
   </div>
