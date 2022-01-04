@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>Todolist1</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -16,10 +17,16 @@
   <body>
        <div class="mb-1 bg-primary text-white todo-list-table "><h10 id="notice"><%= notice %> </h10></div>
       
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
   <div class="container-fluid">
     <a class="navbar-brand text-centre title" href="#"><h1><%= link_to 'Todolist',todos_path, class: 'link' %></h1>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><a class="nav-link active" aria-current="page" href="#">
+            <% if user_signed_in?%>
+        
+        <h3> <%= link_to 'Sign out',destroy_user_session_path,class:"btn btn-secondary", :method => :delete %></h3>
+      
+          <% end %></a>
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent ">
